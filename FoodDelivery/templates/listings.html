@@ -1,0 +1,12 @@
+{% extends 'index.html' %} {% block content %} {% for list in listings %} 
+{% load static %}
+
+<h1>{{list.item_name}}</h1>
+<h2>{{list.item_description}}</h2>
+<p>{{list.quantity}}</p>
+
+
+<img src="{% static list.item_picture %}" alt="" width="300px" />
+<button><a href={% url 'AddCart' list.id %}>Add To Cart</a></button>
+
+{% endfor %} {% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'index.html' %} {% block content %} 
+{% load static %}
+
+    
+
+    <form enctype="multipart/form-data" method="POST">
+      {% csrf_token %} {{listing_form}}
+
+      <input type="submit" name="" value="Create" />
+    </form>
+
+
+
+<h1>CURRENT LISTINGS</h1>
+{% for list in listing %} 
+
+
+<h1>{{list.item_name}}</h1>
+<h2>{{list.item_description}}</h2>
+<p>{{list.quantity}}</p>
+<img src="{% static list.item_picture %}" alt="" width="300px" />
+<button><a href={% url 'deletelisting' list.id %}>Delete</a></button>
+{% endfor %}
+ {% endblock %}

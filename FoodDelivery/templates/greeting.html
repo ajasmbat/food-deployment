@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static '\css\greeting.css'%}" />
+    <title>LUXURY STARTS HERE</title>
+  </head>
+  <body>
+    <section class="content">
+      <h1>FOOD AWAITS</h1>
+
+      
+
+      <img width=500px src="{% static '\video\Screenshot 2022-10-27 001117.png'%}" alt="" >
+
+      <div class="overlay"></div>
+
+      <a href="{% url 'stores' %}">EXPLORE</a>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'index.html' %} {% block content %} 
+{% load static %}
+
+    {% for store in Stores %}
+
+    <h1>{{store.store_name}}</h1>
+    <h1>{{store.address}}</h1>
+    <button><a href={% url 'addListings' store.id %}>create listing</a></button>
+    <button><a href={% url 'delete' store.id %}>delete</a></button>
+    <h2>{{store.user}}</h2>
+    {% endfor %}
+
+    <form method="POST">
+      {% csrf_token %} {{Stores_form}}
+
+      <input type="submit" name="" value="Create" />
+    </form>
+ {% endblock %}

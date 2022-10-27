@@ -1,0 +1,18 @@
+
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+<h1>
+    BROWSE OUR STORES
+</h1>
+{% for store in Stores %}
+
+    <h1>{{store.store_name}}</h1>
+    <h1>{{store.address}}</h1>
+    <button><a href={% url 'list' store.id %}>Browse</a></button>
+    <h2>Owner: {{store.user}}</h2>
+    {% endfor %}
+
+{% endblock %}
